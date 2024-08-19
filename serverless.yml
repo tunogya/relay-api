@@ -1,0 +1,18 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: tunogya
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: Autoglyphs
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-northeast-1
+
+functions:
+  autoglyphs:
+    name: autoglyphs
+    handler: autoglyphs.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
