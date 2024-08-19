@@ -1,7 +1,7 @@
 # "org" ensures this Service is used with the correct Serverless Framework Access Key.
 org: tunogya
 # "service" is the name of this project. This will also be added to your AWS resource names.
-service: Autoglyphs
+service: relay-api
 
 provider:
   name: aws
@@ -11,8 +11,15 @@ provider:
 functions:
   autoglyphs:
     name: autoglyphs
-    handler: autoglyphs.handler
+    handler: src/autoglyphs.handler
     events:
       - httpApi:
-          path: /
+          path: /autoglyphs
+          method: get
+  search:
+    name: search
+    handler: src/search.handler
+    events:
+      - httpApi:
+          path: /search
           method: get
