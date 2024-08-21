@@ -1,2 +1,2 @@
-# Autoglyphs
+# Relay API
 
