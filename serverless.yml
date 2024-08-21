@@ -18,6 +18,8 @@ functions:
   autoglyphs:
     name: autoglyphs
     handler: src/autoglyphs.handler
+    timeout: 30
+    memorySize: 256
     events:
       - httpApi:
           path: /autoglyphs
@@ -25,6 +27,8 @@ functions:
   search:
     name: search
     handler: src/search.handler
+    timeout: 30
+    memorySize: 256
     events:
       - httpApi:
           path: /search
