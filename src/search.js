@@ -63,7 +63,6 @@ export const handler = async (event) => {
         vector: await embedding(query),
         limit: 10,
         projection: {
-          sig: 0,
           $vector: 0,
         },
       },
