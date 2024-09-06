@@ -56,8 +56,10 @@ export const handler = async (event) => {
     .collection("events")
     .find(
       {
-        kind: 1,
-        pubkey: pubkey,
+        $or: [
+          {kind: 1, pubkey: pubkey},
+          {kind: 1063, pubkey: pubkey}
+        ]
       },
       {
         vector: await embedding(query),
